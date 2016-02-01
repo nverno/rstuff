@@ -1,0 +1,20 @@
+---
+title: Aggregating
+output: html_document
+---
+
+## Using the Aggregation Panel
+
+There are a couple of basic concepts.
+
++ **Target Variables**: These are the variables of interest.  They will be split by all combinations of the grouping variables, and the summary function will be applied to each group.  These variables can be either __continuous__ or __categorical__, but if more than one is selected, _they should be of the same type_.
+
++ **Grouping Variables**: The grouping variables should be a __categorical__ variables like plot (PPLOT) or elevation class (ELEVCL).  You can also turn a continuous variable into a categorical variable by binning it into classes (for example binning DBH into a sequence of size classes).
+
++ **Summary Functions**: These are the functions that will be applied to the target variables after they have been split into groups by the grouping variables.  If the target variables are categorical, functions like the _mean_ or _max_, don't make sense.  Instead, use functions to count total occurences or find all unique values.
+
+
+## Examples
+
+* Find the average 
+

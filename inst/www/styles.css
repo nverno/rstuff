@@ -1,0 +1,69 @@
+.verticalLine {
+    border-left: thick solid #1D1A1A;
+}
+
+.selectize-input .selectize-dropdown {
+    font-size: 80%;
+}
+
+.fa.fa-bars.fa-wide {
+    transform: scaleX(10);
+}
+
+.leaf-control-panel {
+    right: 0%;
+    width: 20%;
+    top: 15%;
+    position: fixed;
+    z-index: 1;
+    border: 2px solid #2C3E50;
+    padding-top: 12px;
+    border-radius: 1em 1em 1em 1em;
+    background-color: rgba(44, 62, 80, 0.3);
+    min-heigth: 50px;  /* maintain bars when collapsed */
+}
+
+.leaf-control-panel:hover {
+    background-color: rgba(44, 62, 80, 0.8);
+}
+
+.leaf-control-panel label {
+    color: white;
+}
+
+.leaf-control-panel div .form-group,
+.leaf-control-panel div .checkbox {
+    margin-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.leaf-control-panel hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.leaf-control-panel .leaf-toggle {
+    position: relative;
+    top: 0%;
+    width:100%;
+    padding-left: 45%;
+    background-color: transparent;
+    background-image: none;
+    font-family: fontAwesome;
+    color: black;
+}
+
+.leaf-control-panel .leaf-toggle:hover {
+  color: #fff;
+}
+.leaf-control-panel .leaf-toggle:focus,
+.leaf-control-panel .leaf-toggle:active {
+  background: transparent;
+}
+
+.leaf-controls {
+    margin: auto;
+    width: 100%;
+    padding: 5px;
+    padding-top: 0px;
+}
