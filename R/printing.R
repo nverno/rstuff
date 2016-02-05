@@ -6,21 +6,21 @@
 ##' @param fill where additional spaces should be added (default random)
 ##' @return justifed string
 ##' @export
-justify1 <- function(string, width=getOption('width'), 
+justify <- function(string, width=getOption('width'), 
                     fill=c('random', 'right', 'left')) {
     strs <- strwrap(string, width=width)
     paste(fill_spaces(strs, width, match.arg(fill)), collapse="\n")
 }
 
-##' Justify vector of strings to all be the same length as width
+##' Fill strings so all are the same length as width
 ##' by filling with additional spaces.
 ##' 
 ##' @param lines Vector of strings
 ##' @param width Width to make strings
 ##' @param fill Preference of where to add additional spaces (default is random)
-##' @return Justified strings
+##' @return vector of justified strings
 ##' @export
-justify <- function(lines, width, fill=c('random', 'right', 'left')) {
+fill_spaces <- function(lines, width, fill=c('random', 'right', 'left')) {
     fill <- match.arg(fill)
     tokens <- strsplit(lines, '\\s+')
     res <- lapply(head(tokens, -1L), function(x) {
@@ -38,5 +38,5 @@ justify <- function(lines, width, fill=c('random', 'right', 'left')) {
         spaces <- c('', unlist(lapply(times, formatC, x=' ', digits=NULL)))
         paste(c(rbind(spaces, x)), collapse='')
     })
-    c(res, tail(tokens, 1L))
+    c(res, paste(tail(tokens, 1L)[[1]], collapse=' '))
 }
