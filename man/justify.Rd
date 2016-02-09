@@ -2,23 +2,24 @@
 % Please edit documentation in R/printing.R
 \name{justify}
 \alias{justify}
-\title{Justify vector of strings to all be the same length as width
-by filling with additional spaces.}
+\title{Justify strings like in open office or excel so each line is
+the exact same length (this doesn't do it).}
 \usage{
-justify(lines, width, fill = c("random", "right", "left"))
+justify(string, width = getOption("width"), fill = c("random", "right",
+  "left"))
 }
 \arguments{
-\item{lines}{Vector of strings}
+\item{string}{input string}
 
-\item{width}{Width to make strings}
+\item{width}{width of justified outcome.}
 
-\item{fill}{Preference of where to add additional spaces (default is random)}
+\item{fill}{where additional spaces should be added (default random)}
 }
 \value{
-Justified strings
+justifed string
 }
 \description{
-Justify vector of strings to all be the same length as width
-by filling with additional spaces.
+Justify strings like in open office or excel so each line is
+the exact same length (this doesn't do it).
 }
 

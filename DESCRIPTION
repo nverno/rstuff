@@ -3,11 +3,12 @@ Title: Utilities and stuff
 Version: 0.0.0.9000
 Authors@R: person("Noah", "Peart", email = "noah.v.peart@gmail.com", role = c("aut", "cre"))
 Description: Not too much really.
-Depends:
+Depends: 
     R (>= 3.2.3)
 License: GPL-2
 LazyData: true
-Imports:
+Imports: 
     shiny,
     data.table
 RoxygenNote: 5.0.1
+Suggests: rmarkdown
