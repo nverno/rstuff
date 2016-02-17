@@ -3,7 +3,7 @@
 ## Description: Functions to help with markdown related tasks
 ## Author: Noah Peart
 ## Created: Mon Feb  8 23:31:20 2016 (-0500)
-## Last-Updated: Mon Feb  8 23:58:30 2016 (-0500)
+## Last-Updated: Wed Feb 17 02:30:43 2016 (-0500)
 ##           By: Noah Peart
 ######################################################################
 
@@ -19,6 +19,21 @@ prettify <- function(x, type=c('each', 'all')) {
   } else if (tt == 'all') {
     sprintf('`%s`', toString(x))
   }
+}
+
+##' Convert input to list
+##'
+##' Print vector as a (ordered/unordered) list
+##'
+##' @param x Input vector
+##' @param use.na If true, leave NA in result
+##' @param type List type (ordered/unordered)
+##' @export
+pretty_list <- function(x, use.na=FALSE, type=c("ul", "ol")) {
+  tstart <- match.arg(type, type)
+  tend <- sub('<', "</", tstart)
+  paste(c(tstart, sprintf("<li>%s</li>", if (use.na) x else na.omit(x)), 
+    tend), collapse='\n')
 }
 
 ##' Render and browse the file

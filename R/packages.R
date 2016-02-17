@@ -34,34 +34,3 @@ clean_src <- function(pattern="\\.gz$") {
     unlink(normalizePath(list.files(src, pattern=pattern, full.names = TRUE)))
 }
 
-##' Modification of Sys.which that can find the ImageMagik convert.exe
-##' 
-##' @seealso \link{http://stackoverflow.com/questions/34030087/how-to-stop-sys-which-from-sucking-on-windows/34031214?noredirect=1#34031214}
-##' @param cmd System command to find
-##' @export
-Sys.which2 <- function(cmd) {
-    stopifnot(length(cmd) == 1)
-    if (.Platform$OS.type == "windows") {
-        suppressWarnings({
-            pathname <- shell(sprintf("where %s 2> NUL", cmd), intern=TRUE)[1]
-        })
-        if (!is.na(pathname)) return(setNames(pathname, cmd))
-    }
-    Sys.which(cmd)
-}
-
-##' Can use this to compare compressed archives for example
-##' 
-##' @seealso \link{http://stackoverflow.com/questions/34189716/test-if-compressed-archives-contain-same-data/34191638#34191638}
-##' @title binRead
-##' @param fName Filename
-##' @return bytes
-##' @author bluefish (SO tag)
-binRead <- function(fName){
-  f_s <- file.info(fName)$size
-  f <- file(fName,"rb")
-  res <- readBin(f, "raw", f_s)
-  close(f)
-  return(res)
-}
-

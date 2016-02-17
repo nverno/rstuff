@@ -43,3 +43,36 @@ nonEmpty <- function(lst, check_nested=TRUE) {
             length(i), logical(1))]
     }
 }
+
+##' Modification of Sys.which that can find the ImageMagik convert.exe
+##' 
+##' Find the correct .exe on Windows.
+##' @seealso \link[stackoverflow]{http://stackoverflow.com/questions/34030087/how-to-find-correct-executable-with-sys-which-on-windows}
+##' @param cmd System command to find
+##' @export
+Sys.which2 <- function(cmd) {
+    stopifnot(length(cmd) == 1)
+    if (.Platform$OS.type == "windows") {
+        suppressWarnings({
+            pathname <- shell(sprintf("where %s 2> NUL", cmd), intern=TRUE)[1]
+        })
+        if (!is.na(pathname)) return(setNames(pathname, cmd))
+    }
+    Sys.which(cmd)
+}
+
+##' Can use this to compare compressed archives for example
+##' 
+##' @seealso \link[stackoverflow]{http://stackoverflow.com/questions/34189716/test-if-compressed-archives-contain-same-data/34191638#34191638}
+##' @title binRead
+##' @param fName Filename
+##' @return bytes
+##' @author bluefish (SO tag)
+binRead <- function(fName){
+  f_s <- file.info(fName)$size
+  f <- file(fName,"rb")
+  res <- readBin(f, "raw", f_s)
+  close(f)
+  return(res)
+}
+

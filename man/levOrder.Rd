@@ -2,19 +2,25 @@
 % Please edit documentation in R/factors.R
 \name{levOrder}
 \alias{levOrder}
-\title{If the underlying variable is numeric, like PPLOT,
-lets order the factor numerically, otherwise use a standard}
+\title{Level ordering}
 \usage{
-levOrder(v)
+levOrder(v, include.empty = TRUE, empty = c("back", "front"))
 }
 \arguments{
-\item{v}{Variable}
+\item{v}{Variable to convert to factor}
+
+\item{include.empty}{If specified, include empty strings as factors}
+
+\item{empty}{If \code{include.empty} is true, specifies location of empty level.}
 }
 \value{
-Order of levels
+Vector containing order of levels.
 }
 \description{
+Create factor levels in a standard way
+}
+\details{
 If the underlying variable is numeric, like PPLOT,
-lets order the factor numerically, otherwise use a standard
+orders the factor numerically, otherwise uses a standard sort
 }
 
