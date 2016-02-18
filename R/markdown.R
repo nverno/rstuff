@@ -3,7 +3,7 @@
 ## Description: Functions to help with markdown related tasks
 ## Author: Noah Peart
 ## Created: Mon Feb  8 23:31:20 2016 (-0500)
-## Last-Updated: Wed Feb 17 02:30:43 2016 (-0500)
+## Last-Updated: Thu Feb 18 07:00:02 2016 (-0500)
 ##           By: Noah Peart
 ######################################################################
 
