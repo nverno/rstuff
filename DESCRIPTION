@@ -4,14 +4,14 @@ Version: 0.0.0.9000
 Authors@R: person("Noah", "Peart", email = "noah.v.peart@gmail.com", role = c("aut", "cre"))
 Description: Not too much really.
 Depends: 
-    R (>= 3.2.3),
-    data.table
-License: GPL-2
+    R (>= 3.2.3)
+License: WTFPL
 LazyData: true
 Imports: 
     shiny,
     stringi,
     rmarkdown,
     datadoc,
-    sync.afs
+    sync.afs,
+    data.table
 RoxygenNote: 5.0.1
