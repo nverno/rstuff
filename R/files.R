@@ -104,13 +104,13 @@ print.dirtree <- function(x, width=2, rootname="root", hsep='-', vsep='|') {
   blank <- paste(rep(' ', width+1), collapse='')
   cat(paste0(rootname, '\n'))
   
-  queue <- "0"
-  while (length(queue)) {
-    current <- x[[queue[[1]]]]
+  stack <- "0"
+  while (length(stack)) {
+    current <- x[[stack[[1]]]]
     if (current$depth)
       cat(do.call(paste, list(c(
         rep(blank, current$depth-1), vsep, w, current$name, '\n'), collapse='')))
-    queue <- c(current[["cs"]], queue[-1L])
+    stack <- c(current[["cs"]], stack[-1L])
   }
   cat('\n')
 }
