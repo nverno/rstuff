@@ -1,4 +1,4 @@
-Package: stuff
+Package: rstuff
 Title: Utilities and stuff
 Version: 0.0.0.9000
 Authors@R: person("Noah", "Peart", email = "noah.v.peart@gmail.com", role = c("aut", "cre"))
