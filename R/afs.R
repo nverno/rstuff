@@ -1,12 +1,3 @@
-### afs.R --- 
-## Filename: afs.R
-## Description: Loading raw files off AFS
-## Author: Noah Peart
-## Created: Mon Feb  8 23:42:46 2016 (-0500)
-## Last-Updated: Mon Feb  8 23:58:05 2016 (-0500)
-##           By: Noah Peart
-######################################################################
-
 ##' Grab files off AFS
 ##' 
 ##' @param files R names of files to get
